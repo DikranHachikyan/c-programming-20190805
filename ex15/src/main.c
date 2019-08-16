@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(int argc, char **argv){
 	int firstNumber = 0;
@@ -8,11 +9,11 @@ int main(int argc, char **argv){
 	printf("First Number:");
 	scanf("%d", &firstNumber);
 
-	printf("Letter:");
+	printf("Action (+ add,- subtract,* multiply,/ divide,q-quit):");
 	do{
 		scanf("%c", &letter);
 	}
-	while( letter == '\n' || letter < 'A' || letter > 'Z');
+	while( letter == '\n' || !strchr("+-*/q",letter));
 
 	printf("Second Number:");
 	scanf("%d", &secondNumber);
